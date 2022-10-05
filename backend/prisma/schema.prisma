@@ -17,3 +17,10 @@ model inventory {
   capacity Int
   createdAt DateTime @default(now())
 }
+
+model candyCorp {
+  id Int @id @default(autoincrement())
+  itemName String
+  cost Int
+  createdAt DateTime @default(now())
+}
