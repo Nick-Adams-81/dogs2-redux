@@ -24,3 +24,12 @@ model candyCorp {
   cost Int
   createdAt DateTime @default(now())
 }
+
+model theSweetSuite {
+  id Int @id @default(autoincrement())
+  itemName String
+  cost Int
+  createdAt DateTime @default(now())
+}
+
+
