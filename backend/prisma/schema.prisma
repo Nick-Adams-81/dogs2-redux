@@ -32,4 +32,11 @@ model theSweetSuite {
   createdAt DateTime @default(now())
 }
 
+model dentistsHateUs {
+  id Int @id @default(autoincrement())
+  itemName String
+  cost Int
+  createdAt DateTime @default(now())
+}
+
 
