@@ -16,7 +16,6 @@ const Home = () => {
                         <h1>{item.name}</h1>
                         <h1>{item.email}</h1>
                     </div>
-
                 </>
             ))}
         </>
