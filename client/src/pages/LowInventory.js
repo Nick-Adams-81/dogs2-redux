@@ -5,6 +5,7 @@ const LowInventory = () => {
 
     return (
         <>
+        <h1>low inventory</h1>
         </>
     )
 }

@@ -5,6 +5,7 @@ const CandyCorp = () => {
 
     return (
         <>
+        <h1>candy corp</h1>
         </>
     )
 }
