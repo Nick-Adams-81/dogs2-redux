@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import get from '../APIHooks/GET'
+import InventoryCard from '../components/InventoryCard'
 
 const Home = () => {
 
@@ -9,14 +10,11 @@ const Home = () => {
 
     return (
         <>
-            <h1>Home test</h1>
+            <h1>Randy's Candys</h1>
             {userData.map(item => (
-                <>
-                    <div key={item.id}>
-                        <h1>{item.name}</h1>
-                        <h1>{item.email}</h1>
-                    </div>
-                </>
+                <div style={{ display: 'inline-block' }}>
+                <InventoryCard key={item.id} title={item.name} text={item.email}/>
+                </div>
             ))}
         </>
     )
