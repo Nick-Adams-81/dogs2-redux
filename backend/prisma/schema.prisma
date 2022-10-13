@@ -21,22 +21,31 @@ model inventory {
 model candyCorp {
   id Int @id @default(autoincrement())
   itemName String
-  cost Int
+  cost Float
   createdAt DateTime @default(now())
 }
 
 model theSweetSuite {
   id Int @id @default(autoincrement())
   itemName String
-  cost Int
+  cost Float
   createdAt DateTime @default(now())
 }
 
 model dentistsHateUs {
   id Int @id @default(autoincrement())
   itemName String
-  cost Int
+  cost Float
   createdAt DateTime @default(now())
 }
+
+model shoppingCart {
+  id Int @id @default(autoincrement())
+  itemName String
+  totalQuantity Int
+  itemtotalPrice Float
+}
+
+
 
 

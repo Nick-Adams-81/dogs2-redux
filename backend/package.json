@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "prisma": {
+    "seed": "node ./prisma/seed.mjs"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
@@ -21,4 +24,6 @@
     "nodemon": "^2.0.20",
     "prisma": "^4.4.0"
   }
+ 
+ 
 }
