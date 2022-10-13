@@ -10,9 +10,9 @@ const Home = () => {
 
     return (
         <>
-            <h1>Randy's Candys</h1>
+            <h1 style={{ marginLeft: '35%' }}>Randy's Candys</h1>
             {userData.map(item => (
-                <div style={{ display: 'inline-block' }}>
+                <div style={{ display: 'inline-block', marginLeft: 50 }}>
                 <InventoryCard key={item.id} title={item.name} text={item.email}/>
                 </div>
             ))}

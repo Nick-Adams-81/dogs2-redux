@@ -1,4 +1,4 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/home'
 import LowInventory from './pages/LowInventory'
 import DentistsHateUs from './pages/DentistsHateUs'
@@ -15,12 +15,15 @@ function App() {
   const navigate = useNavigate()
   return (
     <>
-    <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/")}>Home</Button>
+    <div style={{ marginLeft: '20%' }}>
+       <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/")}>Home</Button>
     <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/lowInventory")}>Low Inventory</Button>
-    <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/candyCorp")}>candy Corp</Button>
+    <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/candyCorp")}>Candy Corp</Button>
     <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/theSweetSuite")}>The Sweet Suite</Button>
     <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/dentistsHateUs")}>Dentists Hate Us</Button>
     <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/shoppingCart")}>Cart</Button>
+    </div>
+   
      
     <Routes>
       <Route path="/" element={<Home />} />
