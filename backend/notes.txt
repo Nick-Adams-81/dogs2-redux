@@ -3,4 +3,7 @@ prisma migration command = npx prisma migrate dev --name of migration OR npx pri
 prisma connect to your db server = yourdb://USER:PASSWORD@HOST:PORT/DATABASE
 (yourdb = mysql, postgresql, sqlLite, mongoDB, etc...)
 
-seed db with data command = npx prisma db seed --preview-feature
+seed db with data command = npx prisma db seed 
+
+to start dev server = npm start
+server runs on port 3001

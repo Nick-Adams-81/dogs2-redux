@@ -11,8 +11,9 @@ const InventoryCard = (props) => {
             color: '#5D104D'
         }}>
             <Card.Body>
-                <Card.Title style={{ fontSize: 17, margin: 15 }}>{props.title}</Card.Title>
-                <Card.Text style={{ margin: 20 }}>{props.text}</Card.Text>
+                <Card.Title style={{ fontSize: 17, margin: 15 }}>Item: {props.title}</Card.Title>
+                <Card.Text style={{ margin: 20 }}>Stock: {props.stock}</Card.Text>
+                <Card.Text style={{ margin: 20 }}>Capacity: {props.capacity}</Card.Text>
             </Card.Body>
         </Card>
     );
