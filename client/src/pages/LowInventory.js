@@ -4,8 +4,8 @@ import InventoryCard from '../components/InventoryCard'
 
 const LowInventory = () => {
 
-
     const [inventory, setInventory] = useState([])
+
     get('http://localhost:3001/store/inventory', setInventory)
 
     const lowInventory = inventory.filter(item => (item.capacity / item.stock) >= 4)

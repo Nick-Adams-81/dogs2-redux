@@ -19,6 +19,7 @@ app.use('/store', require('./routes/inventory.route'))
 app.use('/candy', require('./routes/candyCorp.route'))
 app.use('/sweet', require('./routes/theSweetSutie'))
 app.use('/dentist', require('./routes/dentistsHateUs.route'))
+app.use('/cart', require('./routes/shoppingCart.route'))
 
 app.use((req, res, next) => {
   next(createError.NotFound());
