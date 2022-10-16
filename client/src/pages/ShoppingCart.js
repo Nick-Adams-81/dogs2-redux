@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 const ShoppingCart = () => {
 
     const [cart, setCart] = useState([])
+    get('http://localhost:3001/cart/shoppingCart', setCart)
+
     let totals = []
     cart.forEach(({ itemtotalPrice }) => totals.push(itemtotalPrice))
     const total = totals.reduce((item, total) => item + total, 0).toFixed(2)
@@ -17,7 +19,7 @@ const ShoppingCart = () => {
     }
 
 
-    get('http://localhost:3001/cart/shoppingCart', setCart)
+    
     
     return (
         <>

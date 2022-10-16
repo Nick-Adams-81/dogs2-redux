@@ -12,9 +12,8 @@ const Home = () => {
         <>
             <h1 style={{ marginLeft: '35%' }}>Randy's Candys</h1>
             {userData.map(item => (
-                <div style={{ display: 'inline-block', marginLeft: 30 }}>
+                <div style={{ display: 'inline-block', marginLeft: 30 }} key={item.id}>
                     <InventoryCard
-                        key={item.id}
                         title={item.productName}
                         stock={item.stock} 
                         capacity={item.capacity}
