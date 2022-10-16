@@ -22,10 +22,14 @@ const CandyCorp = () => {
     }
 
     return (
-        <>
-            <h1>Candy Corp</h1>
+        <div>
+            <h1 style={{ textAlign: 'center' }}>Candy Corp</h1>
             {candyData.map(item => (
-                <div style={{ display: 'inline-block', marginLeft: 30 }}>
+                <div style={{ 
+                    display: 'inline-block', 
+                    marginLeft: 30
+                    }} 
+                    key={item.id}>
                     <Card style={{ width: '18rem', margin: 10 }}>
                         <Card.Body>
                             <Card.Title style={{ fontSize: 30 }}>{item.itemName}</Card.Title>
@@ -52,7 +56,7 @@ const CandyCorp = () => {
                     </Card>
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 export default CandyCorp
