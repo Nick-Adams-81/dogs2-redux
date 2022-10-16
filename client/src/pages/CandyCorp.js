@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import get from '../APIHooks/GET'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import post from '../APIHooks/POST'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 import InputGroup from 'react-bootstrap/InputGroup'
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
 
 const CandyCorp = () => {
 
@@ -13,10 +14,11 @@ const CandyCorp = () => {
     get('http://localhost:3001/candy/candyCorp', setCandyData)
 
     let totalQuantity = 0
-    let itemTotalPrice = 0
+    let itemtotalPrice = 0
 
     const handleClick = ({ itemName }) => {
-        console.log({ itemName, totalQuantity, itemTotalPrice})
+        const data = { itemName, totalQuantity, itemtotalPrice }
+        post('http://localhost:3001/cart/postCartItem', data)
     }
 
     return (
@@ -42,7 +44,7 @@ const CandyCorp = () => {
                             <Button
                                 style={{ marginLeft: 60 }}
                                 onClick={() => {
-                                    itemTotalPrice = Number(calculateTotalCost(totalQuantity, item.cost))
+                                    itemtotalPrice = Number(calculateTotalCost(totalQuantity, item.cost))
                                     handleClick(item)
                                 }}
                             >Add to cart</Button>
