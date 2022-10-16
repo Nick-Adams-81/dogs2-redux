@@ -3,7 +3,6 @@ const createError = require('http-errors');
 const morgan = require('morgan');
 require('dotenv').config();
 const cors = require('cors');
-
 const app = express();
 app.use(cors({ credentials: true }))
 app.use(express.json());
