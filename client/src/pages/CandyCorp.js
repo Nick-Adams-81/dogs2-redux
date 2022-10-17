@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import get from '../APIHooks/GET'
 import post from '../APIHooks/POST'
+import calculateCost from '../CustomHooks/CalculateCost'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -9,8 +10,7 @@ import Form from 'react-bootstrap/Form'
 const CandyCorp = () => {
 
     const [candyData, setCandyData] = useState([])
-    const calculateTotalCost = (itemCost, itemAmmount) => (itemCost * itemAmmount).toFixed(2)
-
+    
     get('http://localhost:3001/candy/candyCorp', setCandyData)
 
     let totalQuantity = 0
@@ -32,8 +32,8 @@ const CandyCorp = () => {
                     key={item.id}>
                     <Card style={{ width: '18rem', margin: 10 }}>
                         <Card.Body>
-                            <Card.Title style={{ fontSize: 30 }}>{item.itemName}</Card.Title>
-                            <Card.Text>{item.cost}</Card.Text>
+                            <Card.Title style={{ fontSize: 30, textAlign: 'center' }}>{item.itemName}</Card.Title>
+                            <Card.Text style={{ textAlign: 'center' }}>{item.cost}</Card.Text>
                             <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1"></InputGroup.Text>
                                 <Form.Control
@@ -48,7 +48,7 @@ const CandyCorp = () => {
                             <Button
                                 style={{ marginLeft: 60 }}
                                 onClick={() => {
-                                    itemtotalPrice = Number(calculateTotalCost(totalQuantity, item.cost))
+                                    itemtotalPrice = Number(calculateCost(totalQuantity, item.cost))
                                     handleClick(item)
                                 }}
                             >Add to cart</Button>
