@@ -2,6 +2,7 @@ import { useState } from "react"
 import get from '../APIHooks/GET'
 import Delete from '../APIHooks/DELETE'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 const ShoppingCart = () => {
 
@@ -20,16 +21,22 @@ const ShoppingCart = () => {
 
     return (
         <>
-            <h1>shopping cart</h1>
-            <h2>your total is: ${total}</h2>
+            <h1 style={{ textAlign: 'center' }}>shopping cart</h1>
+            <h2 style={{ textAlign: 'center' }}>your total is: ${total}</h2>
             <Button
+                style={{  width: '90%', marginLeft: 40 }}
                 onClick={handleClick}
                 variant="info">Submit</Button>{' '}
             {cart.map(item => (
-                <div key={item.id}>
-                    <p>Item: {item.itemName}</p>
-                    <p>Quantity: {item.totalQuantity}</p>
-                    <p>Price: {item.itemtotalPrice}</p>
+                <div style={{ display: 'inline-block' }}
+                    key={item.id}>
+                    <Card style={{ width: '18rem', margin: 10 }}>
+                        <Card.Body>
+                            <Card.Title>Item: {item.itemName}</Card.Title>
+                            <Card.Text>Quantity: {item.totalQuantity}</Card.Text>
+                            <Card.Text>Price: {item.itemtotalPrice}</Card.Text>
+                        </Card.Body>
+                    </Card>
                 </div>
             ))}
         </>

@@ -10,7 +10,7 @@ import Form from 'react-bootstrap/Form'
 const CandyCorp = () => {
 
     const [candyData, setCandyData] = useState([])
-    
+
     get('http://localhost:3001/candy/candyCorp', setCandyData)
 
     let totalQuantity = 0
@@ -25,17 +25,16 @@ const CandyCorp = () => {
         <div>
             <h1 style={{ textAlign: 'center' }}>Candy Corp</h1>
             {candyData.map(item => (
-                <div style={{ 
-                    display: 'inline-block', 
+                <div style={{
+                    display: 'inline-block',
                     marginLeft: 30
-                    }} 
+                }}
                     key={item.id}>
                     <Card style={{ width: '18rem', margin: 10 }}>
                         <Card.Body>
                             <Card.Title style={{ fontSize: 30, textAlign: 'center' }}>{item.itemName}</Card.Title>
                             <Card.Text style={{ textAlign: 'center' }}>{item.cost}</Card.Text>
                             <InputGroup className="mb-3">
-                                <InputGroup.Text id="basic-addon1"></InputGroup.Text>
                                 <Form.Control
                                     style={{ marginLeft: 20 }}
                                     placeholder="item ammount"
@@ -46,7 +45,8 @@ const CandyCorp = () => {
                                 />
                             </InputGroup>
                             <Button
-                                style={{ marginLeft: 60 }}
+                                variant='outline-success'
+                                style={{ marginLeft: 75 }}
                                 onClick={() => {
                                     itemtotalPrice = Number(calculateCost(totalQuantity, item.cost))
                                     handleClick(item)
