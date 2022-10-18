@@ -11,7 +11,7 @@ const LowInventory = () => {
 
     return (
         <>
-            <h1>low inventory</h1>
+            <h1 style={{ textAlign: 'center' }}>Low Inventory</h1>
             {lowInventory.map(item => (
                 <div style={{ display: 'inline-block', marginLeft: 30 }} key={item.id}>
                     <InventoryCard

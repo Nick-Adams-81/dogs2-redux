@@ -1,27 +1,26 @@
-import { useState } from 'react'
-import get from '../APIHooks/GET'
-import InventoryCard from '../components/InventoryCard'
+import { useState } from "react";
+import get from "../APIHooks/GET";
+import InventoryCard from "../components/InventoryCard";
 
 const Home = () => {
+  const [userData, setUserData] = useState([]);
 
-    const [userData, setUserData] = useState([])
+  get("http://localhost:3001/store/inventory", setUserData);
 
-    get('http://localhost:3001/store/inventory', setUserData)
+  return (
+    <>
+      <h1 style={{ marginLeft: "35%" }}>Randy's Candys</h1>
+      {userData.map((item) => (
+        <div id='card' style={{ display: "inline-block", marginLeft: 30 }} key={item.id}>
+          <InventoryCard
+            title={item.productName}
+            stock={item.stock}
+            capacity={item.capacity}
+          />
+        </div>
+      ))}
+    </>
+  );
+};
 
-    return (
-        <>
-            <h1 style={{ marginLeft: '35%' }}>Randy's Candys</h1>
-            {userData.map(item => (
-                <div style={{ display: 'inline-block', marginLeft: 30 }} key={item.id}>
-                    <InventoryCard
-                        title={item.productName}
-                        stock={item.stock} 
-                        capacity={item.capacity}
-                        />
-                </div>
-            ))}
-        </>
-    )
-}
-
-export default Home
+export default Home;

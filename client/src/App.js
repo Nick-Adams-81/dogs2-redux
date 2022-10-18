@@ -7,6 +7,8 @@ import ShoppingCart from './pages/ShoppingCart'
 import CandyCorp from './pages/CandyCorp'
 import { Routes, Route, useNavigate } from "react-router-dom"
 import Button from 'react-bootstrap/Button'
+import './style.css'
+
 
 
 
@@ -15,7 +17,7 @@ function App() {
   const navigate = useNavigate()
 
   return (
-    <>
+    <div id='body' style={{ height: 1500 }}>
       <div style={{ marginLeft: '17%' }}>
         <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/")}>Home</Button>
         <Button variant="info" style={{ margin: 2 }} onClick={() => navigate("/lowInventory")}>Low Inventory</Button>
@@ -33,7 +35,7 @@ function App() {
         <Route path="/dentistsHateUs" element={<DentistsHateUs />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
       </Routes>
-    </>
+    </div>
 
   )
 }
