@@ -3,6 +3,9 @@ import get from "../APIHooks/GET";
 import Delete from "../APIHooks/DELETE";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "../style.css";
 
 const ShoppingCart = () => {
   const [cart, setCart] = useState([]);
@@ -29,17 +32,19 @@ const ShoppingCart = () => {
       >
         Submit
       </Button>{" "}
-      {cart.map((item) => (
-        <div style={{ display: "inline-block" }} key={item.id}>
-          <Card style={{ width: "18rem", margin: 10 }}>
-            <Card.Body>
-              <Card.Title>Item: {item.itemName}</Card.Title>
-              <Card.Text>Quantity: {item.totalQuantity}</Card.Text>
-              <Card.Text>Price: {item.itemtotalPrice}</Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
-      ))}
+      <Row>
+        {cart.map((item) => (
+          <Col sm={12} md={6} lg={4}>
+            <Card id='dataCard2' style={{ width: "18rem", margin: 10 }} className="mx-auto">
+              <Card.Body>
+                <Card.Title style={{ marginLeft: 60 }}>Item: {item.itemName}</Card.Title>
+                <Card.Text style={{ marginLeft: 85 }}>Quantity: {item.totalQuantity}</Card.Text>
+                <Card.Text style={{ marginLeft: 85 }}>Price: {item.itemtotalPrice}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };

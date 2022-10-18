@@ -35,11 +35,17 @@ const CandyCorp = () => {
               className="mx-auto"
             >
               <Card.Body>
-                <Card.Title style={{ fontSize: 30, textAlign: "center" }}>
+                <Card.Title
+                  id="title2"
+                  style={{ fontSize: 30, textAlign: "center" }}
+                >
                   {item.itemName}
                 </Card.Title>
-                <Card.Text style={{ textAlign: "center" }}>
-                  {item.cost}
+                <Card.Text
+                  id="cardText"
+                  style={{ textAlign: "center", fontSize: 20 }}
+                >
+                  ${item.cost}/per item
                 </Card.Text>
                 <InputGroup className="mb-3">
                   <Form.Control
@@ -52,8 +58,8 @@ const CandyCorp = () => {
                   />
                 </InputGroup>
                 <Button
-                  variant="outline-success"
-                  style={{ marginLeft: 75 }}
+                  variant="success"
+                  style={{ marginLeft: 90 }}
                   onClick={() => {
                     itemtotalPrice = Number(
                       calculateCost(totalQuantity, item.cost)

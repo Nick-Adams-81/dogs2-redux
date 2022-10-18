@@ -5,10 +5,11 @@ const InventoryCard = (props) => {
   return (
     <Card
       id="card"
+      className="mx-auto"
       style={{
         width: "14rem",
+        height: "14rem",
         border: "1px solid black",
-        margin: 4,
       }}
     >
       <Card.Body>
