@@ -6,15 +6,13 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const CandyCorp = () => {
   const [candyData, setCandyData] = useState([]);
-  
 
-  get(
-    "http://localhost:3001/candy/candyCorp",
-    setCandyData,
-  );
+  get("http://localhost:3001/candy/candyCorp", setCandyData);
 
   let totalQuantity = 0;
   let itemtotalPrice = 0;
@@ -24,51 +22,48 @@ const CandyCorp = () => {
     post("http://localhost:3001/cart/postCartItem", data);
   };
 
-  
-
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Candy Corp</h1>
-      {candyData.map((item) => (
-        <div
-          style={{
-            display: "inline-block",
-            marginLeft: 30,
-          }}
-          key={item.id}
-        >
-          <Card style={{ width: "18rem", margin: 10 }}>
-            <Card.Body>
-              <Card.Title style={{ fontSize: 30, textAlign: "center" }}>
-                {item.itemName}
-              </Card.Title>
-              <Card.Text style={{ textAlign: "center" }}>{item.cost}</Card.Text>
-              <InputGroup className="mb-3">
-                <Form.Control
-                  style={{ marginLeft: 20 }}
-                  placeholder="item ammount"
-                  aria-label="item-ammount"
-                  aria-describedby="basic-addon1"
-                  type="number"
-                  onChange={(e) => (totalQuantity = Number(e.target.value))}
-                />
-              </InputGroup>
-              <Button
-                variant="outline-success"
-                style={{ marginLeft: 75 }}
-                onClick={() => {
-                  itemtotalPrice = Number(
-                    calculateCost(totalQuantity, item.cost)
-                  );
-                  handleClick(item);
-                }}
-              >
-                Add to cart
-              </Button>
-            </Card.Body>
-          </Card>
-        </div>
-      ))}
+      <Row style={{ display: "flex" }}>
+        {candyData.map((item) => (
+  
+            <Col sm={12} md={6} lg={4} key={item.id}>
+              <Card style={{ width: "20rem", margin: 3 }} className="mx-auto">
+                <Card.Body>
+                  <Card.Title style={{ fontSize: 30, textAlign: "center" }}>
+                    {item.itemName}
+                  </Card.Title>
+                  <Card.Text style={{ textAlign: "center" }}>
+                    {item.cost}
+                  </Card.Text>
+                  <InputGroup className="mb-3">
+                    <Form.Control
+                      style={{ marginLeft: 20 }}
+                      placeholder="item ammount"
+                      aria-label="item-ammount"
+                      aria-describedby="basic-addon1"
+                      type="number"
+                      onChange={(e) => (totalQuantity = Number(e.target.value))}
+                    />
+                  </InputGroup>
+                  <Button
+                    variant="outline-success"
+                    style={{ marginLeft: 75 }}
+                    onClick={() => {
+                      itemtotalPrice = Number(
+                        calculateCost(totalQuantity, item.cost)
+                      );
+                      handleClick(item);
+                    }}
+                  >
+                    Add to cart
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+        ))}
+      </Row>
     </div>
   );
 };
