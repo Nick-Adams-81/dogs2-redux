@@ -39,7 +39,7 @@ const DentistsHateUs = () => {
                 >
                   {item.itemName}
                 </Card.Title>
-                <Card.Text style={{ textAlign: "center", fontSize: 20 }}>
+                <Card.Text id="cardText" style={{ textAlign: "center", fontSize: 20 }}>
                   ${item.cost}/per item
                 </Card.Text>
                 <InputGroup className="mb-3">
