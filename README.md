@@ -11,4 +11,4 @@
 
 ### Backend
 * First you will need to install the dependencies, do this with the command:
-`npm i` or `npm install`
+* `npm i` or `npm install`
