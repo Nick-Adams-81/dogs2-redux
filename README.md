@@ -26,3 +26,24 @@
 
 * To start the dev sserver use this command:<br />
  `npm run dev`
+
+ ## Frontend
+ * To install all dependencies needed again use this command:<br />
+ `npm i` or `npm install`
+* Once all dependencies are installed you can run the app using the command:<br />
+`npm start`
+* The app should be running at port 3000. you should be able to navigate to `http://localhost:3000` and see the app running.
+
+## Special Considerations
+I'd like to thank the people involved that made me persue this opportunity,
+I hope in the future I get to work with all of you. Software is a huge community but the people we meet on the way make an impact and that's no different here. The following is a small list some of those people:
+
+* Terry and Joe Lev
+* Walt and Chermaine Zimmerman
+* Lindsey Molineaux
+* Jonatan Delgado
+* Riley Cronin
+* Kyle Levy<br />
+
+There's many more to thank but this readme would get pretty long, again thank you for the opportunity!
+
