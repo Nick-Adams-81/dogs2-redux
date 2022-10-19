@@ -33,11 +33,14 @@ const DentistsHateUs = () => {
               className="mx-auto"
             >
               <Card.Body>
-                <Card.Title style={{ fontSize: 30, textAlign: "center" }}>
+                <Card.Title
+                  id="title2"
+                  style={{ fontSize: 30, textAlign: "center" }}
+                >
                   {item.itemName}
                 </Card.Title>
-                <Card.Text style={{ textAlign: "center" }}>
-                  {item.cost}
+                <Card.Text style={{ textAlign: "center", fontSize: 20 }}>
+                  ${item.cost}/per item
                 </Card.Text>
                 <InputGroup className="mb-3">
                   <Form.Control
@@ -50,7 +53,7 @@ const DentistsHateUs = () => {
                   />
                 </InputGroup>
                 <Button
-                  variant="outline-success"
+                  variant="success"
                   style={{ marginLeft: 75 }}
                   onClick={() => {
                     itemtotalPrice = Number(

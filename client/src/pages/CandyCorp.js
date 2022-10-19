@@ -31,7 +31,7 @@ const CandyCorp = () => {
           <Col sm={12} md={6} lg={4} key={item.id}>
             <Card
               id="dataCard"
-              style={{ width: "20rem", margin: 3 }}
+              style={{ width: "18rem", margin: 3 }}
               className="mx-auto"
             >
               <Card.Body>
