@@ -18,7 +18,7 @@
 * I have the backend configured to run locally at localhost: 3001, you can adjust what port the app runs on but you would have to reconfigure all API routes accordingly.
 
 * Once you have a connection to your SQL server, you can migrate the data models using the following command:
-* `npx prisma migrate dev --name of migration`
+ `npx prisma migrate dev --name of migration`
 * Once you have migrated the data models you can now seed them with the following command:
 * `npx prisma db seed `
 
