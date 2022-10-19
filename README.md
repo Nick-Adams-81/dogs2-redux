@@ -17,8 +17,8 @@
 * Note the USER in your url is your username, PASSWORD is your password, @HOST:PORT is the host and port your SQL server is running on, and DATABASE is the name of the database you are using with this app.
 * I have the backend configured to run locally at localhost: 3001, you can adjust what port the app runs on but you would have to reconfigure all API routes accordingly.
 
-* Once you have a connection to your SQL server, you can migrate the data models using the following command:
- \n`npx prisma migrate dev --name of migration`
+* Once you have a connection to your SQL server, you can migrate the data models using the following command:<br />
+ `npx prisma migrate dev --name of migration`
 * Once you have migrated the data models you can now seed them with the following command:
 * `npx prisma db seed `
 
