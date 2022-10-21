@@ -1,6 +1,5 @@
 import { useState } from "react";
 import get from "../APIHooks/GET";
-import post from "../APIHooks/POST";
 import calculateCost from "../CustomHooks/CalculateCost";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -8,6 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import handleClick from "../CustomHooks/HandleClick";
 import "../style.css";
 
 const DentistsHateUs = () => {
@@ -16,11 +16,7 @@ const DentistsHateUs = () => {
 
   let totalQuantity = 0;
   let itemtotalPrice = 0;
-  const handleClick = ({ itemName }) => {
-    const data = { itemName, totalQuantity, itemtotalPrice };
-    post("http://localhost:3001/cart/postCartItem", data);
-  };
-
+ 
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Dentists Hate Us</h1>
@@ -59,7 +55,7 @@ const DentistsHateUs = () => {
                     itemtotalPrice = Number(
                       calculateCost(totalQuantity, item.cost)
                     );
-                    handleClick(item);
+                    handleClick(item, totalQuantity, itemtotalPrice);
                   }}
                 >
                   Add to cart
