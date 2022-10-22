@@ -16,7 +16,7 @@ const DentistsHateUs = () => {
 
   let totalQuantity = 0;
   let itemtotalPrice = 0;
- 
+
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Dentists Hate Us</h1>
@@ -35,7 +35,10 @@ const DentistsHateUs = () => {
                 >
                   {item.itemName}
                 </Card.Title>
-                <Card.Text id="cardText" style={{ textAlign: "center", fontSize: 20 }}>
+                <Card.Text
+                  id="cardText"
+                  style={{ textAlign: "center", fontSize: 20 }}
+                >
                   ${item.cost}/per item
                 </Card.Text>
                 <InputGroup className="mb-3">
