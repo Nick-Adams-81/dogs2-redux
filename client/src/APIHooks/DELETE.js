@@ -1,11 +1,9 @@
-
-
 const Delete = (url) => {
-    fetch(url, {
-        method: "DELETE"
-    })
+  fetch(url, {
+    method: "DELETE",
+  })
     .then(() => console.group("Item Deleted!!!"))
-    .catch(err => console.log(err))
-}
+    .catch((err) => console.log(err));
+};
 
-export default Delete
+export default Delete;
